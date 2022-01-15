@@ -1,2 +1,3 @@
-# Coding-Your-Future-Hackathon-2022
+# CYF-Hackathon-2022
 Working with the awesome, Shaylee Coulter!
+Will be edited soon!
