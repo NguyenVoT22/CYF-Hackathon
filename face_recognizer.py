@@ -2,13 +2,13 @@ import cv2
 import os
 
 cam = cv2.VideoCapture(0)
-cam.set(3, 640) # set video width
-cam.set(4, 480) # set video height
+cam.set(3, 640) # width
+cam.set(4, 480) # height
 
 face_detector = cv2.CascadeClassifier('cascades/haarcascade_frontalface_default.xml')
 
 # For each person, enter one numeric face id
-face_id = input('\n Enter a user ID. Start w/ 0 for first user, then run again w/ 1 & 2 ')
+face_id = input('\n Please enter a user ID. Start w/ 0 for first user, then run again w/ 1 & 2 ')
 
 print("\n [INFO] Initializing face capture. Look the camera and wait ...")
 # Initialize individual sampling face count
@@ -25,8 +25,8 @@ while(True):
         cv2.rectangle(img, (x,y), (x+w,y+h), (255,0,0), 2)     
         count += 1
 
-        # Save the captured image into the datasets folder
-        cv2.imwrite("faces_dataset/User." + str(face_id) + '.' + str(count) + ".jpg", gray[y:y+h,x:x+w])
+        # Images will be saved in the datasets folder.
+        cv2.imwrite("faces_dataset/Authorized." + str(face_id) + '.' + str(count) + ".jpg", gray[y:y+h,x:x+w])
 
         cv2.imshow('image', img)
 
