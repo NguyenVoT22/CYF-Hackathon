@@ -16,7 +16,7 @@ def getImagesAndLabels(path):
     faceSamples=[]
     ids = []
     for imagePath in imagePaths:
-        PIL_img = Image.open(imagePath).convert('L') # convert it to grayscale
+        PIL_img = Image.open(imagePath).convert('L') # converts it to grayscale
         img_numpy = np.array(PIL_img,'uint8')
         
         #grab the user id for each image

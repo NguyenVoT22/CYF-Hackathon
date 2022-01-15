@@ -17,12 +17,14 @@ count = 0
 while(True):
 
     ret, img = cam.read()
-    grey = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    grey = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
     faces = face_detector.detectMultiScale(grey, 1.3, 5)
 
     for (x,y,w,h) in faces:
 
-        cv2.rectangle(img, (x,y), (x+w,y+h), (255,0,0), 2)     
+        cv2.rectangle(image,(x,y),(x+w,y+h), (0, 8, 20), 3) 
+                 # format -> (img, strtpnt, endpnt, clr, thcknss)
+                 # COLOR_BGR2GRAY <- BGR RGB -> COLOR_RGB2GRAY   
         count += 1
 
         # Images will be saved in the datasets folder.

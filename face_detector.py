@@ -9,7 +9,7 @@ cap.set(4,480) # Height
  
 while(True):
     ret, image = cap.read()
-    grey = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    grey = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
 
     faces = faceCascade.detectMultiScale(
         grey,     
@@ -19,9 +19,10 @@ while(True):
     )
     
     for (x,y,w,h) in faces:
-        cv2.rectangle(image,(x,y),(x+w,y+h), (0, 29, 91), 3) 
+        cv2.rectangle(image,(x,y),(x+w,y+h), (0, 8, 20), 3) 
                  # format -> (img, strtpnt, endpnt, clr, thcknss)
-       
+                 # COLOR_BGR2GRAY <- BGR RGB -> COLOR_RGB2GRAY
+
         roi_gray = grey[y:y+h, x:x+w]
         roi_color = image[y:y+h, x:x+w] 
     

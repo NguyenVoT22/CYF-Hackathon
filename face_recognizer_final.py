@@ -6,16 +6,6 @@ from email.message import EmailMessage
 # from sense_hat import SenseHat
 from sense_emu import SenseHat
 
-# ⊱ ────── {Anvil imports that never worked} ────── ⊰
-#╔══════ ≪≫°✺°≪ ≫ ══════╗
-
-# import anvil.server
-# from anvil.tables import app_tables
-# from time import sleep
-# from datetime import datetime
-
-#╚══════ ≪≫°✺°≪ ≫ ══════╝
-
 r = (255, 0, 0) #red
 g = (0, 255, 0) #green
 b = (0, 0, 255) #blue
@@ -98,16 +88,16 @@ while True:
         if (confidence < 100):
             id = names[id]
             confidence = "  {0}%".format(round(100 - confidence))
-            # Email saying yesh this is your fam member
+            # Email saying yesh this is the owner or their fam's member
             #build the email with the EmailMessage() object.
             msg = EmailMessage()
                 
-            msg['Subject'] = "Sibling Passes By"
+            msg['Subject'] = "Owner and their trustees"
             msg['From'] = "otheremail.locked@gmail.com"
             msg['To'] = "otheremail.locked@gmail.com"
 
             #set the body with .set_content()
-            msg.set_content("Chill ok?\nThis is just either you, older sibling, or younger sibling chill.")
+            msg.set_content("Hello [owner's name]!\n You are receiving this email because we would like you to know this was you or your family who passed by.")
 
             #use smptlib to send using gmail server, on port 465. 
             server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
@@ -118,7 +108,7 @@ while True:
             #send email   
             server.send_message(msg)
                     
-            print("sending sibling confirmation")
+            print("sending positive msg")
                     
             server.quit()   
 
