@@ -4,31 +4,32 @@ import cv2
 faceCascade = cv2.CascadeClassifier('cascades/haarcascade_frontalface_default.xml')
 
 cap = cv2.VideoCapture(0)
-cap.set(3,640) # set Width
-cap.set(4,480) # set Height
+cap.set(3,640) # Width
+cap.set(4,480) # Height
  
 while(True):
-    ret, img = cap.read()
-    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    ret, image = cap.read()
+    grey = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
     faces = faceCascade.detectMultiScale(
-        gray,     
+        grey,     
         scaleFactor=1.2,
         minNeighbors=5,     
         minSize=(20, 20)
     )
     
     for (x,y,w,h) in faces:
-        cv2.rectangle(img,(x,y),(x+w,y+h),(255,255,0),2)
+        cv2.rectangle(image,(x,y),(x+w,y+h), (0, 29, 91), 3) 
+                 # format -> (img, strtpnt, endpnt, clr, thcknss)
        
-        roi_gray = gray[y:y+h, x:x+w]
-        roi_color = img[y:y+h, x:x+w] 
+        roi_gray = grey[y:y+h, x:x+w]
+        roi_color = image[y:y+h, x:x+w] 
     
-    cv2.imshow('frame', img)
-    cv2.imshow('gray', gray)
+    cv2.imshow('colored', image)
+    cv2.imshow('greyscale', grey)
     
     k = cv2.waitKey(30) & 0xff
-    if k == 27: # press 'ESC' to quit
+    if k == 27: # will closed when you press `ESC`
         break
 
 cap.release()

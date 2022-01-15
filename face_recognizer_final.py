@@ -34,27 +34,27 @@ m = (111, 153, 35) # matcha
 
 sense = SenseHat()
 
-matcha_heart = [
-e, e, e, e, e, e, e, e,
-e, m, m, e, m, m, e, e,
-m, m, m, m, m, m, m, e,
-m, m, m, m, m, m, m, e,
-m, m, m, m, m, m, m, e,
-e, m, m, m, m, m, e, e,
-e, e, m, m, m, e, e, e,
-e, e, e, m, e, e, e, e
-]
+# matcha_heart = [
+# e, e, e, e, e, e, e, e,
+# e, m, m, e, m, m, e, e,
+# m, m, m, m, m, m, m, e,
+# m, m, m, m, m, m, m, e,
+# m, m, m, m, m, m, m, e,
+# e, m, m, m, m, m, e, e,
+# e, e, m, m, m, e, e, e,
+# e, e, e, m, e, e, e, e
+# ]
 
-strawberry_heart = [
-e, e, e, e, e, e, e, e,
-e, s, s, e, s, s, e, e,
-s, s, s, s, s, s, s, e,
-s, s, s, s, s, s, s, e,
-s, s, s, s, s, s, s, e,
-e, s, s, s, s, s, e, e,
-e, e, s, s, s, e, e, e,
-e, e, e, s, e, e, e, e
-]
+# strawberry_heart = [
+# e, e, e, e, e, e, e, e,
+# e, s, s, e, s, s, e, e,
+# s, s, s, s, s, s, s, e,
+# s, s, s, s, s, s, s, e,
+# s, s, s, s, s, s, s, e,
+# e, s, s, s, s, s, e, e,
+# e, e, s, s, s, e, e, e,
+# e, e, e, s, e, e, e, e
+# ]
 
 recognizer = cv2.face.LBPHFaceRecognizer_create()
 recognizer.read('trainer/trainer.yml')
@@ -67,12 +67,12 @@ font = cv2.FONT_HERSHEY_SIMPLEX
 id = 0
 
 # Update these names. Make sure to add as many as IDs trained; assumes first ID is 0.
-names = ['You', 'Older Sibling', 'Tiny Sibling'] 
+names = ['Owner', 'Owner Spouse', 'Owner Child'] 
 
 # Initialize and start realtime video capture
 cam = cv2.VideoCapture(0)
-cam.set(3, 640) # set video widht
-cam.set(4, 480) # set video height
+cam.set(3, 700) # set video widht
+cam.set(4, 500) # set video height
 
 # Define min window size to be recognized as a face
 minW = 0.1*cam.get(3)
@@ -80,10 +80,10 @@ minH = 0.1*cam.get(4)
 
 while True:
     ret, img =cam.read()
-    gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+    grey = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
     
     faces = faceCascade.detectMultiScale( 
-        gray,
+        grey,
         scaleFactor = 1.2,
         minNeighbors = 5,
         minSize = (int(minW), int(minH)),
@@ -92,7 +92,7 @@ while True:
     for(x,y,w,h) in faces:
         cv2.rectangle(img, (x,y), (x+w,y+h), (0,255,0), 2)
         
-        id, confidence = recognizer.predict(gray[y:y+h,x:x+w])
+        id, confidence = recognizer.predict(grey[y:y+h,x:x+w])
 
         # Check if confidence is less them 100 ==> "0" is perfect match 
         if (confidence < 100):
@@ -113,7 +113,7 @@ while True:
             server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
 
             #replace with your own credentials
-            server.login("otheremail.locked@gmail.com", "Codenext123")
+            server.login("otheremail.locked@gmail.com", "Hackathons123")
                 
             #send email   
             server.send_message(msg)
@@ -146,7 +146,7 @@ while True:
             server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
 
             #replace with your own credentials
-            server.login("otheremail.locked@gmail.com", "Codenext123")
+            server.login("otheremail.locked@gmail.com", "Hackathons123")
                 
             #send email   
             server.send_message(msg)

@@ -17,8 +17,8 @@ count = 0
 while(True):
 
     ret, img = cam.read()
-    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    faces = face_detector.detectMultiScale(gray, 1.3, 5)
+    grey = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    faces = face_detector.detectMultiScale(grey, 1.3, 5)
 
     for (x,y,w,h) in faces:
 
@@ -26,7 +26,7 @@ while(True):
         count += 1
 
         # Images will be saved in the datasets folder.
-        cv2.imwrite("faces_dataset/Authorized." + str(face_id) + '.' + str(count) + ".jpg", gray[y:y+h,x:x+w])
+        cv2.imwrite("faces_dataset/Authorized." + str(face_id) + '.' + str(count) + ".jpg", grey[y:y+h,x:x+w])
 
         cv2.imshow('image', img)
 
