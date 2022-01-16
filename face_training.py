@@ -16,7 +16,7 @@ def getImagesAndLabels(path):
     faceSamples=[]
     ids = []
     for imagePath in imagePaths:
-        PIL_img = Image.open(imagePath).convert('L') # converts it to grayscale
+        PIL_img = Image.open(imagePath).convert('L') # converts it to greyscale
         img_numpy = np.array(PIL_img,'uint8')
         
         #grab the user id for each image
@@ -27,7 +27,7 @@ def getImagesAndLabels(path):
             ids.append(id)
     return faceSamples,ids
 
-print ("\n [INFO] Training faces. It will take a few seconds. Wait ...")
+print ("\n We are currently training the faces ... Just a few seconds. Please wait ...")
 faces,ids = getImagesAndLabels(path)
 recognizer.train(faces, np.array(ids))
 
@@ -35,4 +35,4 @@ recognizer.train(faces, np.array(ids))
 recognizer.write('trainer/trainer.yml')
 
 # Print the numer of faces trained and end program
-print("\n We have trained {0}, number of face(s). Exiting Program".format(len(np.unique(ids))))
+print("\n We have sucessfully trained {0} face(s). Now exiting ...".format(len(np.unique(ids))))

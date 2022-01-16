@@ -5,46 +5,43 @@ import smtplib
 from email.message import EmailMessage
 # from sense_hat import SenseHat
 from sense_emu import SenseHat
+import datetime
 
-r = (255, 0, 0) #red
-g = (0, 255, 0) #green
-b = (0, 0, 255) #blue
+
+# color pallette from coolors
+#  https://coolors.co/000814-001d3d-003566-ffc300-ffd60a-e03616
+
+rb = (0, 8, 20) # rich black
+ob = (0, 29, 61) # oxford blue
+pb = (0, 53, 102) # prussian blue
 e = (0, 0, 0) #empty
-w = (255, 255, 255) #white
-c = (0, 255, 255) #cyan
-y = (255, 255, 0) #yellow
-o = (255, 128, 0) #orange
-n = (255, 128, 128) #pink
-p = (128, 0, 128) #purple
-d = (255, 0, 128) #darkPink
-l = (128, 255, 128) #lightGreen
-s = (255,105,97) # strawberry
-m = (111, 153, 35) # matcha
-
+my = (255, 195, 0) # mikadao yellow
+gwg = (255, 214, 10) # gold web golden
+v = (224, 54, 22) # vermilion
 
 sense = SenseHat()
 
-# matcha_heart = [
-# e, e, e, e, e, e, e, e,
-# e, m, m, e, m, m, e, e,
-# m, m, m, m, m, m, m, e,
-# m, m, m, m, m, m, m, e,
-# m, m, m, m, m, m, m, e,
-# e, m, m, m, m, m, e, e,
-# e, e, m, m, m, e, e, e,
-# e, e, e, m, e, e, e, e
-# ]
+sapphire_hrt = [
+e, e, e, e, e, e, e, e,
+e, ob, ob, e, ob, ob, e, e,
+ob, ob, ob, ob, ob, ob, ob, e,
+ob, ob, ob, ob, ob, ob, ob, e,
+ob, ob, ob, ob, ob, ob, ob, e,
+e, ob, ob, ob, ob, ob, e, e,
+e, e, ob, ob, ob, e, e, e,
+e, e, e, ob, e, e, e, e
+]
 
-# strawberry_heart = [
-# e, e, e, e, e, e, e, e,
-# e, s, s, e, s, s, e, e,
-# s, s, s, s, s, s, s, e,
-# s, s, s, s, s, s, s, e,
-# s, s, s, s, s, s, s, e,
-# e, s, s, s, s, s, e, e,
-# e, e, s, s, s, e, e, e,
-# e, e, e, s, e, e, e, e
-# ]
+citrine_hrt = [
+e, e, e, e, e, e, e, e,
+e, my, my, e, my, my, e, e,
+my, my, my, my, my, my, my, e,
+my, my, my, my, my, my, my, e,
+my, my, my, my, my, my, my, e,
+e, my, my, my, my, my, e, e,
+e, e, my, my, my, e, e, e,
+e, e, e, my, e, e, e, e
+]
 
 recognizer = cv2.face.LBPHFaceRecognizer_create()
 recognizer.read('trainer/trainer.yml')
@@ -61,8 +58,8 @@ names = ['Owner', 'Owner Spouse', 'Owner Child']
 
 # Initialize and start realtime video capture
 cam = cv2.VideoCapture(0)
-cam.set(3, 700) # set video widht
-cam.set(4, 500) # set video height
+cam.set(3, 640) # width
+cam.set(4, 480) # height
 
 # Define min window size to be recognized as a face
 minW = 0.1*cam.get(3)
@@ -70,7 +67,7 @@ minH = 0.1*cam.get(4)
 
 while True:
     ret, img =cam.read()
-    grey = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+    grey = cv2.cvtColor(img,cv2.COLOR_RGB2GRAY)
     
     faces = faceCascade.detectMultiScale( 
         grey,
@@ -80,12 +77,12 @@ while True:
        )
 
     for(x,y,w,h) in faces:
-        cv2.rectangle(img, (x,y), (x+w,y+h), (0,255,0), 2)
-        
+        cv2.rectangle(img,(x,y),(x+w,y+h), (0, 8, 20), 3)         
         id, confidence = recognizer.predict(grey[y:y+h,x:x+w])
 
         # Check if confidence is less them 100 ==> "0" is perfect match 
         if (confidence < 100):
+            dateAll = datetime.datetime.now()
             id = names[id]
             confidence = "  {0}%".format(round(100 - confidence))
             # Email saying yesh this is the owner or their fam's member
@@ -94,31 +91,32 @@ while True:
                 
             msg['Subject'] = "Owner and their trustees"
             msg['From'] = "otheremail.locked@gmail.com"
-            msg['To'] = "otheremail.locked@gmail.com"
+            msg['To'] = "otheremail.locked@gmail.com" # replace with your company email
 
             #set the body with .set_content()
-            msg.set_content("Hello [owner's name]!\n You are receiving this email because we would like you to know this was you or your family who passed by.")
+            msg.set_content("Hello [owner's name]!\n You are receiving this email because we would like you to know this was either  or your family who passed by.")
 
             #use smptlib to send using gmail server, on port 465. 
             server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
 
-            #replace with your own credentials
-            server.login("otheremail.locked@gmail.com", "Hackathons123")
+            server.login("otheremail.locked@gmail.com", "Hackathons123") #tmp pwd
                 
-            #send email   
+            #sends email   
             server.send_message(msg)
                     
             print("sending positive msg")
                     
             server.quit()   
 
-            with open('siblings.txt', 'a+') as f:    
-                f.write("Yo it's your siblings.")
-                f.write("\n")
+            with open('trusted.txt', 'a+') as f:
+                f.write("To let you know there was someone at your place that you trust at ")
+                f.write(str(dateAll) + "\n")
+                # f.write("\n")
 
-            sense.set_pixels(matcha_heart)
+            sense.set_pixels(sapphire_hrt)
 
         else:
+            dateAll = datetime.datetime.now()
             id = "unknown"
             confidence = "  {0}%".format(round(100 - confidence))
             # Email saying yesh this is me/any other intruder
@@ -127,16 +125,16 @@ while True:
                 
             msg['Subject'] = "Intruder?!"
             msg['From'] = "otheremail.locked@gmail.com"
-            msg['To'] = "otheremail.locked@gmail.com"
+            msg['To'] = "otheremail.locked@gmail.com" # your company email
 
             #set the body with .set_content()
-            msg.set_content("Is that your parents..?\nBro someone is at your door/computer stay safe..")
+            msg.set_content("Hello [owner's name]!\n I don't think that was your trusted people at the door ... ")
 
             #use smptlib to send using gmail server, on port 465. 
             server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
 
             #replace with your own credentials
-            server.login("otheremail.locked@gmail.com", "Hackathons123")
+            server.login("otheremail.locked@gmail.com", "Hackathons123") 
                 
             #send email   
             server.send_message(msg)
@@ -146,11 +144,12 @@ while True:
             server.quit()   
 
 
-            with open('parents.txt', 'a+') as f:    
-                f.write("Yo your parents are here. Or is it someone else?")
-                f.write("\n")
+            with open('intruders.txt', 'a+') as f:
+                f.write("To let you know there was someone at your place that could be suspicious at ")
+                f.write(str(dateAll) + "\n")
+                # f.write("\n")
             
-            sense.set_pixels(strawberry_heart)
+            sense.set_pixels(citrine_hrt)
                
         cv2.putText(img, str(id), (x+5,y-5), font, 1, (255,255,255), 2)
         cv2.putText(img, str(confidence), (x+5,y+h-5), font, 1, (255,255,0), 1)  
@@ -165,47 +164,3 @@ while True:
 print("\n [INFO] Exiting Program and cleanup stuff")
 cam.release()
 cv2.destroyAllWindows()
-
-#♡━━━━━━ ◦ Anvil Code that never worked ◦ ━━━━━━♡
-#┌─── ･ ｡ﾟ★: *.☪ .* :☆ﾟ. ───┐
-
-# anvil.server.connect("GSAONDRKDQ2KQEJNCVWWWLI2-NIWB4MQ6WZ4OPU3X-CLIENT")
-
-
-# @anvil.server.callable
-# def get_env_data():
-    
-#     humidity = sense.get_humidity()
-#     temperature = sense.get_temperature()
-#     pressure = sense.get_pressure()
-    
-#     data = {
-#         "h":humidity,
-#         "t": temperature,
-#         "p": pressure
-        
-#         }
-#     return data
-
-# @anvil.server.callable
-# def save_data():
-    
-#     data = get_env_data()
-#     t = data["t"]
-#     h = data["h"]
-#     p = data["p"]
-
-#     dt = datetime.now()
-    
-#     new_row = app_tables.env_data.add_row(datetime=dt,
-#                                           temperature=t,
-#                                           humidity=h,
-#                                           pressure=p)
-    
-#     print(new_row)
-
-# while True:
-#     save_data()
-#     sleep(10)
-
-#└─── ･ ｡ﾟ★: *.☪ .* :☆ﾟ. ───┘

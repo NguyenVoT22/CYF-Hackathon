@@ -22,7 +22,7 @@ while(True):
 
     for (x,y,w,h) in faces:
 
-        cv2.rectangle(image,(x,y),(x+w,y+h), (0, 8, 20), 3) 
+        cv2.rectangle(img,(x,y),(x+w,y+h), (0, 8, 20), 3) 
                  # format -> (img, strtpnt, endpnt, clr, thcknss)
                  # COLOR_BGR2GRAY <- BGR RGB -> COLOR_RGB2GRAY   
         count += 1
