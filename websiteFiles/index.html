@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>replit</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo&family=Archivo+Black&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo&family=Archivo+Black&family=Lilita+One&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+<div class="outside-footer-bar"></div>
+
+<div class="page">
+
+    <img src="PiWatch-logo-blink.gif" class = "logo" />
+  <div class="navbar">
+  <a class="about link" href="#about-header">About</a>
+   <a class="contact link" href="#contact-header" >Contact</a>
+    <a class="signIn link" >Sign In</a>
+   <div class="line"></div>
+  </div>
+
+  <div id="description-box">
+    <img src="pexels-scott-webb-430208.jpg" />
+    <div class="box"></div>
+    <p>PiWatch Security was created by two teen engineers with Python. Our goal is to utilize machine learning to create safer security for your home or business. Through machine learning we train the computer to detect authorized people and to alert when there is danger near your property.  Currently we are utilising the raspberry pi camera for security detection. We hope to later expand to comercial use security camera’s that can utilize our software to make things more safe.</p>
+    <div class="small-line"></div>
+  </div>
+
+  <div class="left blurb" id ="detection-blurb">
+    <div class="flag">
+       <div class="line"></div>
+    <div class="header">Detection</div>
+    </div>
+   
+    <p>When there is someone nearby PiWatch detects the intruder with the pi motion sensor. It fires up is recognition program to check if the intruder is safe or not.</p>
+    <img src="detection.png" /> 
+  </div>
+
+   <div class="right blurb" id ="recognition-blurb">
+      <div class="flag">
+        <div class="line"></div>
+    <div class="header">Recognition</div>
+      </div>
+    
+    <p>With our machine learning software, the computer can recognise if the intruder is someone you deem safe or is unknown. It gives a percentage on how likely this person is a registered safe person. The more that our software seen known people the better it becomes at recognising who is safe and who is not.</p>
+    <img src="recognition.gif" /> 
+  </div>
+
+   <div class="left blurb" id ="notification-blurb">
+      <div class="flag">
+        <div class="line"></div>
+        <div class="header">Notification</div>
+      </div>
+
+    <p>Notifications are sent if PiWatch identifies an unknown intruder. They receive a email notifying them that there is danger, letting you know you need to check your camera to make sure your home or proper is safe!</p>
+    <img src="notification.png" /> 
+  </div>
+
+  <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/T84AWnntxZA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<div id="about-us-and-contact-us">
+  <div id="about-us">
+<div class="flag left">
+  <div class="line"></div>
+  <a class="header" id="about-header">About Us</a>
+</div>
+    <div id="shaylee">
+<img src="shaylee_pfp.png"/>
+<div class="name">Shaylee</div>
+<div class="white-line"></div>
+<p>Shaylee is an 11th grader at San Leandro high, who has little over 1 year experience in coding. She is the designer and web developer of PiWatch. Shaylee has experience in Python, Javascript, p5, HTML, CSS, A-frame, and Figma. Currently her interests lies in cryptocurrency and NFT, and she is learning Solidity. </p>
+    </div>
+
+    <div id="binnie">
+<img src="binnie_pfp.png"/>
+    
+<div class="name">Thanhbinh</div>
+<div class="white-line"></div>
+<p>Thanhbinh is an 11th grader at Connecting Waters East Bay and met Shaylee through the program Google Code Next! They worked on the Raspberry Pi Camera portion of PiWatch and has experiences from Web Development to making little Pi Projects. On their spare time they learn more coding on the side with other programs and learn how to code a Discord bot, that they hope to complete before heading to senior year!</p>
+</div>
+
+  </div>
+
+  <div id="contact-us">
+<div class="flag right">
+<a class="header" id="contact-header">Contact Us</a>
+<div class = "line"></div>
+</div>
+
+<div id="footer"> 
+<div id="email-label">Email<span>*</span></div>
+<input type="text" id="email"/>
+<div id="message-label">Message<span>*</span></div>
+<textarea type="text" id="message"></textarea>
+<button>Submit</button>
+
+<img src="shield-shape-image.png" class="sheild discord"/>
+<img src="discord-logo.png" class="discord-logo"/>
+
+<img src="shield-shape-image.png" class="sheild mail"/>
+<img src="mail-logo.png" class="mail-logo"/>
+
+
+<a id="shaylee-discord-id" class="contact-link">karuma#2618</a>
+<a id="binnie-discord-id" class="contact-link">dwaekki♡#1999</a>
+<a id="shaylee-mail-address" class="contact-link" href="mailto: shaylee.coulter@csedge.org">shaylee.coulter@csedge.org</a>
+<a id="binnie-mail-address" class="contact-link" href="mailto: thanbinh1634@gmail.com">thanbinh1634@gmail.com</a>
+<div id="shaylee-discord">|     Shaylee</div>
+<div id="shaylee-mail">|     Shaylee</div>
+<div id="binnie-discord">|     Thanhbinh</div>
+<div id="binnie-mail">|     Thanhbinh</div>
+</div>
+
+
+  </div>
+  </div>
+  
+</div>
+
+  </body>
+
+</html>
