@@ -1050,3 +1050,25 @@ a{
 a:hover{
 color: #FFFFFF !important;
 }
+
+#githubrepo {
+/* Link to github repo */
+
+
+position: absolute;
+width: 199px;
+height: 28px;
+left: 764px;
+top: 3990px;
+
+font-family: Archivo;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 28px;
+
+/* Gold Web Golden */
+
+color: #FFD60A;
+
+}
