@@ -1,0 +1,1052 @@
+
+body{
+/* Rich Black */
+background: #000814;
+margin: 0px;
+}
+.page{
+position: relative;
+margin: auto;
+max-width: 1728px;
+}
+
+.logo {
+  /* PiWatch logo */
+
+
+position: absolute;
+width: 539px;
+height: 178px;
+left: 77px;
+top: 75px;
+
+background: url(PiWatch.png);
+border: 1px solid #000000;
+box-sizing: border-box;
+}
+
+.navbar{
+  /* nav bar */
+
+
+position: absolute;
+width: 668px;
+height: 34px;
+left: 1060px;
+top: 198px;
+
+}
+
+.link.about {
+  /* About */
+
+
+position: absolute;
+left: 1.05%;
+right: 89.52%;
+top: 0%;
+bottom: 20.59%;
+
+font-family: Lilita One;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 27px;
+
+color: #FFFFFF;
+}
+
+.link.contact {
+  /* Contact */
+
+
+position: absolute;
+left: 17.96%;
+right: 70.06%;
+top: 0%;
+bottom: 20.59%;
+
+font-family: Lilita One;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 27px;
+
+color: #FFFFFF;
+}
+
+.link.signIn {
+  /* Sign In */
+
+
+position: absolute;
+left: 37.43%;
+right: 51.65%;
+top: 0%;
+bottom: 20.59%;
+
+font-family: Lilita One;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 27px;
+
+color: #FFFFFF;
+}
+
+
+
+#description-box {
+  /* description box */
+
+
+position: absolute;
+width: 1159px;
+height: 605px;
+left: 284px;
+top: 456px;
+
+}
+
+#description-box img {
+  /* pi-3bplus-2x1-lowres07629 1 */
+
+
+position: absolute;
+width: 1159px;
+height: 605px;
+left: 0px;
+top: 0px;
+
+}
+
+#description-box .box{
+/* about us box */
+
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+/* Oxford Blue */
+
+background: #001D3D;
+opacity: 0.7;
+}
+
+#description-box p {
+  /* PiWatch Security was created by two teen engineers with Python. Our goal is to utilize machine learning to create safer security for your home or business. Through machine learning we train the computer to detect authorized people and to alert when there is danger near your property. Currently we are utilising the raspberry pi camera for security detection. We hope to later expand to comercial use security camera’s that can utilize our software to make things more safe. */
+
+
+position: absolute;
+width: 1072px;
+height: 250px;
+left: 43px;
+top: 177px;
+
+font-family: Archivo;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 209.5%;
+/* or 50px */
+
+text-align: center;
+
+color: #FFFFFF;
+
+}
+
+#description-box .small-line {
+  /* Line 3 */
+
+
+position: absolute;
+width: 150px;
+height: 3.6px;
+left: 505px;
+top: 565px;
+
+background-color: #FFFFFF;
+/* border: 3.6px solid #FFFFFF; */
+}
+
+#detection-blurb{
+  /* detection - blurb */
+
+
+position: absolute;
+width: 1443px;
+height: 488px;
+left: 0px;
+top: 1236px;
+
+}
+
+#recognition-blurb{
+ /* recognition blurb */
+
+
+position: absolute;
+width: 1444px;
+height: 557px;
+left: 284px;
+top: 1875px; 
+}
+
+#notification-blurb{
+  /* notification blurb */
+
+
+position: absolute;
+width: 1443px;
+height: 488px;
+left: 0px;
+top: 2583px;
+
+}
+
+
+.left .flag{
+/* flag */
+width: 668px;
+height: 52px;
+
+position: absolute;
+left: 0%;
+right: 53.71%;
+top: 0%;
+bottom: 89.34%;
+
+}
+.left .flag .header {
+/* Detection */
+
+
+position: absolute;
+left: 61.53%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+font-family: Archivo Black;
+font-style: normal;
+font-weight: normal;
+font-size: 48px;
+line-height: 52px;
+text-align: right;
+
+color: #FFFFFF;
+}
+
+.left p {
+  /* blurb description */
+
+position: absolute;
+left: 0%;
+right: 53.71%;
+top: 18.03%;
+bottom: 18.24%;
+
+font-family: Archivo;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 44px;
+text-align: right;
+
+color: #FFFFFF;
+}
+
+.left img{
+  /* image */
+
+width: 398px;
+height: 488px;
+
+position: absolute;
+left: 72.42%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #C4C4C4;
+}
+
+.right .flag{
+  /* contact us flag */
+
+
+position: absolute;
+left: 53.74%;
+right: 0%;
+top: 0%;
+bottom: 90.66%;
+
+}
+
+.right .flag .header{
+  /* Contact Us */
+
+
+position: absolute;
+left: 0%;
+right: 52.99%;
+top: 0%;
+bottom: 0%;
+
+font-family: Archivo Black;
+font-style: normal;
+font-weight: normal;
+font-size: 48px;
+line-height: 52px;
+
+color: #FFFFFF;
+
+}
+
+.right p{
+  /* blurb description */
+
+
+position: absolute;
+left: 53.74%;
+right: 0%;
+top: 15.8%;
+bottom: 28.37%;
+
+/* normal text */
+
+font-family: Archivo;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 44px;
+
+color: #FFFFFF;
+
+}
+
+.right img{
+  /* image */
+width: 398px;
+height: 488px;
+
+position: absolute;
+left: 0%;
+right: 72.44%;
+top: 0%;
+bottom: 12.39%;
+
+background: #C4C4C4;
+}
+
+#video{
+  /* demo video frame */
+
+
+position: absolute;
+width: 1155px;
+height: 604px;
+left: 288px;
+top: 3325px;
+
+}
+
+#about-us-and-contact-us{
+  /* about us + contact us */
+
+
+position: absolute;
+width: 1728.05px;
+height: 1798px;
+left: 0px;
+top: 4183px;
+}
+
+#about-us{
+  /* about us page */
+
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 44.27%;
+
+}
+#about-us .flag{
+  /* About Us flag */
+width: 668px;
+height: 52px;
+
+position: absolute;
+left: 0%;
+right: 61.34%;
+top: 0%;
+bottom: 94.81%;
+
+}
+
+#about-us .flag .header{
+  /* About Us */
+
+
+position: absolute;
+left: 63.92%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+font-family: Archivo Black;
+font-style: normal;
+font-weight: normal;
+font-size: 48px;
+line-height: 52px;
+text-align: right;
+
+color: #FFFFFF;
+
+}
+
+#shaylee{
+  /* Shaylee Profile */
+
+
+position: absolute;
+left: 16.43%;
+right: 0%;
+top: 17.17%;
+bottom: 47.41%;
+}
+#shaylee img{
+  /* sheild shape image */
+
+
+position: absolute;
+left: 0%;
+right: 79.85%;
+top: 0%;
+bottom: 0%;
+
+}
+
+#shaylee .name{
+  /* Shaylee */
+
+
+position: absolute;
+left: 24.17%;
+right: 66.83%;
+top: 13.8%;
+bottom: 75.21%;
+
+font-family: Archivo;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+}
+
+#shaylee .white-line{
+  /* Line 4 */
+
+
+position: absolute;
+left: 24.17%;
+right: 0%;
+top: 24.79%;
+bottom: 74.65%;
+
+background-color: #FFFFFF;
+width: 1095.05px;
+height: 2px;
+/* border: 2px solid #FFFFFF; */
+}
+
+#shaylee p{
+/* paragraph description */
+
+
+position: absolute;
+left: 24.38%;
+right: 1.53%;
+top: 32.11%;
+bottom: 0%;
+
+font-family: Archivo;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 44px;
+
+color: #FFFFFF;
+
+}
+
+
+#binnie{
+/* Binnie Bio */
+
+
+position: absolute;
+left: 0%;
+right: 16.61%;
+top: 64.57%;
+bottom: 0%;
+
+}
+#binnie img{
+/* sheild shape image */
+
+
+position: absolute;
+left: 79.81%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+}
+
+#binnie .name{
+/* Thanhbinh */
+
+
+position: absolute;
+left: 64.12%;
+right: 23.94%;
+top: 12.39%;
+bottom: 76.62%;
+
+font-family: Archivo;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+}
+
+#binnie .white-line{
+/* Line 5 */
+
+
+position: absolute;
+left: 0%;
+right: 24.01%;
+top: 24.79%;
+bottom: 74.65%;
+
+
+background-color: #FFFFFF;
+width: 1095.05px;
+height: 2px;
+/* border: 2px solid #FFFFFF; */
+}
+
+#binnie p{
+/* paragraph description */
+
+position: absolute;
+left: 1.8%;
+right: 23.94%;
+top: 32.11%;
+bottom: 0%;
+
+font-family: Archivo;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 44px;
+text-align: right;
+
+color: #FFFFFF;
+
+}
+
+#contact-us{
+  /* contact us page */
+
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 65.96%;
+bottom: 0%;
+
+/* Persian Blue */
+
+background: #003566;
+}
+
+#contact-us .flag{
+  /* contact us flag */
+
+
+position: absolute;
+left: 61.34%;
+right: 0%;
+top: 0%;
+bottom: 88.4%;
+
+}
+
+#contact-us .flag .header{
+  /* Contact Us */
+
+
+position: absolute;
+left: 0%;
+right: 55.99%;
+top: 0%;
+bottom: 0%;
+
+font-family: Archivo Black;
+font-style: normal;
+font-weight: normal;
+font-size: 48px;
+line-height: 52px;
+
+color: #FFFFFF;
+
+}
+
+#footer{
+  /* footer page */
+height: 595px;
+width: 1728px;
+/* left: 0px;
+top: 17px; */
+border-radius: 0px;
+
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+}
+
+.outside-footer-bar{
+
+position: absolute;
+width: 100%;
+height: 611.15px;
+left: 4px;
+top: 5369.5px;
+/* padding-top: 50px; */
+
+  /* Persian Blue */
+
+background-color: #003566;
+}
+
+#contact-us button{
+/* Rectangle 2 */
+height: 38px;
+width: 129px;
+
+border: none;
+padding: 0;
+font: inherit;
+cursor: pointer;
+outline: inherit;
+
+position: absolute;
+left: 3.82%;
+right: 88.72%;
+top: 82.03%;
+bottom: 11.76%;
+
+/* Oxford Blue */
+
+background: #001D3D;
+border-radius: 3px;
+
+/* text */
+text-align: center;
+font-family: Archivo;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 26px;
+
+color: #E4E4E4;
+}
+
+input#email{
+  /* input box - email */
+height: 40px;
+width: 680px;
+
+
+position: absolute;
+left: 3.82%;
+right: 56.6%;
+top: 22.06%;
+bottom: 70.92%;
+
+background: #E4E4E4;
+padding: 5px;
+font-size: 18px;
+font-family: Archivo;
+/* Oxford Blue */
+
+border: 3px solid #001D3D;
+border-radius: 3px;
+}
+
+textarea#message {
+  /* input box - message */
+height: 220px;
+width: 680px;
+resize: none;
+cursor: pointer;
+
+position: absolute;
+left: 3.82%;
+right: 56.6%;
+top: 38.4%;
+bottom: 25.49%;
+
+background: #E4E4E4;
+padding: 5px;
+font-size: 18px;
+font-family: Archivo;
+/* Oxford Blue */
+
+border: 3px solid #001D3D;
+border-radius: 3px;
+}
+
+#email-label{
+  /* Email */
+
+
+position: absolute;
+left: 3.82%;
+right: 92.65%;
+top: 16.5%;
+bottom: 79.25%;
+
+font-family: Archivo;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 26px;
+
+color: #FFFFFF;
+
+}
+
+span{
+  /* Vermilion */
+
+color: #E03616;
+}
+
+#message-label{
+  /* Message */
+
+position: absolute;
+left: 3.82%;
+right: 90.51%;
+top: 32.84%;
+bottom: 62.91%;
+
+font-family: Archivo;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 26px;
+
+color: #FFFFFF;
+}
+
+.mail-logo{
+/* mail logo */
+height: 46px;
+width: 72px;
+left: 979px;
+top: 363px;
+border-radius: 0px;
+
+
+position: absolute;
+/* left: 56.66%; */
+right: 39.18%;
+/* top: 59.31%; */
+bottom: 33.17%;
+
+
+}
+
+.sheild.mail{
+/* sheild shape image */
+height: 113px;
+width: 92px;
+left: 968px;
+top: 331px;
+border-radius: 0px;
+
+
+position: absolute;
+/* left: 56.02%; */
+right: 38.66%;
+/* top: 54.08%; */
+bottom: 27.45%;
+
+}
+
+.discord-logo{
+  /* discord logo */
+height: 52px;
+width: 67px;
+left: 981px;
+top: 178px;
+border-radius: 0px;
+
+
+position: absolute;
+/* left: 56.77%; */
+right: 39.35%;
+/* top: 29.08%; */
+bottom: 62.42%;
+}
+
+.sheild.discord{
+  /* sheild shape image */
+height: 113px;
+width: 92px;
+left: 968px;
+top: 148px;
+border-radius: 0px;
+
+
+position: absolute;
+/* left: 56.02%; */
+right: 38.66%;
+/* top: 24.18%; */
+bottom: 57.35%;
+}
+
+#shaylee-discord-id{
+  /* karuma#2618 */
+
+
+position: absolute;
+left: 63.66%;
+right: 29.92%;
+top: 27.29%;
+bottom: 69.44%;
+
+font-family: Archivo;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 20px;
+/* identical to box height */
+
+
+/* Mikado Yellow */
+
+color: #FFC300;
+}
+
+#binnie-discord-id{
+/* dwaekki ♡#1999 */
+
+
+position: absolute;
+left: 63.66%;
+right: 28.59%;
+top: 36.93%;
+bottom: 59.8%;
+
+font-family: Archivo;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 20px;
+/* identical to box height */
+
+
+/* Mikado Yellow */
+
+color: #FFC300;
+
+}
+
+#shaylee-mail-address{
+  /* shaylee.coulter@csedge.org */
+
+
+position: absolute;
+left: 63.66%;
+right: 23.03%;
+top: 57.19%;
+bottom: 39.54%;
+
+font-family: Archivo;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 20px;
+/* identical to box height */
+
+
+/* Mikado Yellow */
+
+color: #FFC300;
+
+}
+
+#shaylee-mail{
+  /* | Shaylee */
+
+
+position: absolute;
+left: 79.57%;
+right: 15.28%;
+top: 56.54%;
+bottom: 40.2%;
+
+font-family: Archivo;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 20px;
+/* identical to box height */
+
+
+/* Mikado Yellow */
+
+color: #FFC300;
+}
+
+
+#binnie-mail{
+  /* | Thanhbinh */
+
+
+position: absolute;
+left: 79.57%;
+right: 14.12%;
+top: 66.18%;
+bottom: 30.56%;
+
+font-family: Archivo;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 20px;
+/* identical to box height */
+
+
+/* Mikado Yellow */
+
+color: #FFC300;
+}
+
+#shaylee-discord{
+/* | Shaylee */
+
+
+position: absolute;
+left: 79.57%;
+right: 15.28%;
+top: 27.29%;
+bottom: 69.44%;
+
+font-family: Archivo;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 20px;
+/* identical to box height */
+
+
+/* Mikado Yellow */
+
+color: #FFC300;;
+}
+
+#binnie-discord{
+  /* | Thanhbinh */
+
+
+position: absolute;
+left: 79.57%;
+right: 14.12%;
+top: 37.58%;
+bottom: 59.15%;
+
+font-family: Archivo;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 20px;
+/* identical to box height */
+
+
+/* Mikado Yellow */
+
+color: #FFC300;
+
+}
+#binnie-mail-address{
+  /* thanhbinh1634@gmail.com */
+
+
+position: absolute;
+left: 63.66%;
+right: 23.5%;
+top: 66.83%;
+bottom: 29.9%;
+
+font-family: Archivo;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 20px;
+/* identical to box height */
+
+
+/* Mikado Yellow */
+
+color: #FFC300;
+}
+.line{
+  /* Line 1 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 100%;
+bottom: 0%;
+
+/* Gold Web Golden */
+background-color: #FFD60A;
+width: 668px;
+height: 3.6px;
+/* border: 3.6px solid #FFD60A; */
+}
+
+.flag .line{
+ top: 0%;
+}
+
+a{
+  text-decoration: none; 
+}
+
+a:hover{
+color: #FFFFFF !important;
+}
