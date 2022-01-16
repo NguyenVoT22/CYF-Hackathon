@@ -28,17 +28,17 @@ while(True):
         count += 1
 
         # Images will be saved in the datasets folder.
-        cv2.imwrite("faces_dataset/Authorized." + str(face_id) + '.' + str(count) + ".jpg", grey[y:y+h,x:x+w])
+        cv2.imwrite("faces_dataset/AuthorizedUsr." + str(face_id) + '.' + str(count) + ".jpg", grey[y:y+h,x:x+w])
 
         cv2.imshow('image', img)
 
     k = cv2.waitKey(100) & 0xff # Press 'ESC' for exiting video
     if k == 27:
         break
-    elif count >= 50: # Will be taking 50 face samples and stop video
+    elif count >= 90: # Will be taking 90 face samples and stop video
          break
 
 # Do a bit of cleanup
-print("\n [INFO] Exiting Program and cleanup stuff")
+print("\n Exiting program..freeing up space...")
 cam.release()
 cv2.destroyAllWindows()

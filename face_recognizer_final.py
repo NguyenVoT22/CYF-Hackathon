@@ -23,13 +23,13 @@ sense = SenseHat()
 
 sapphire_hrt = [
 e, e, e, e, e, e, e, e,
-e, ob, ob, e, ob, ob, e, e,
-ob, ob, ob, ob, ob, ob, ob, e,
-ob, ob, ob, ob, ob, ob, ob, e,
-ob, ob, ob, ob, ob, ob, ob, e,
-e, ob, ob, ob, ob, ob, e, e,
-e, e, ob, ob, ob, e, e, e,
-e, e, e, ob, e, e, e, e
+e, pb, pb, e, pb, pb, e, e,
+pb, pb, pb, pb, pb, pb, pb, e,
+pb, pb, pb, pb, pb, pb, pb, e,
+pb, pb, pb, pb, pb, pb, pb, e,
+e, pb, pb, pb, pb, pb, e, e,
+e, e, pb, pb, pb, e, e, e,
+e, e, e, pb, e, e, e, e
 ]
 
 citrine_hrt = [
@@ -48,18 +48,18 @@ recognizer.read('trainer/trainer.yml')
 cascadePath = "cascades/haarcascade_frontalface_default.xml"
 faceCascade = cv2.CascadeClassifier(cascadePath)
 
-font = cv2.FONT_HERSHEY_SIMPLEX
+font = cv2.FONT_HERSHEY_TRIPLEX
 
 #initiate id counter
 id = 0
 
 # Update these names. Make sure to add as many as IDs trained; assumes first ID is 0.
-names = ['Owner', 'Owner Spouse', 'Owner Child'] 
+names = ['Owner', 'Owner Spouse', 'Owner Relative'] 
 
 # Initialize and start realtime video capture
 cam = cv2.VideoCapture(0)
-cam.set(3, 640) # width
-cam.set(4, 480) # height
+cam.set(3, 640) # Width
+cam.set(4, 480) # Height
 
 # Define min window size to be recognized as a face
 minW = 0.1*cam.get(3)
@@ -118,7 +118,7 @@ while True:
         else:
             dateAll = datetime.datetime.now()
             id = "unknown"
-            confidence = "  {0}%".format(round(100 - confidence))
+            conf = "  {0}%".format(round(100 - conf)) # conf = confidence
             # Email saying yesh this is me/any other intruder
             #build the email with the EmailMessage() object.
             msg = EmailMessage()
@@ -143,7 +143,6 @@ while True:
                     
             server.quit()   
 
-
             with open('intruders.txt', 'a+') as f:
                 f.write("To let you know there was someone at your place that could be suspicious at ")
                 f.write(str(dateAll) + "\n")
@@ -161,6 +160,6 @@ while True:
         break
 
 # Do a bit of cleanup
-print("\n [INFO] Exiting Program and cleanup stuff")
+print("\n Clean Up has finished.")
 cam.release()
 cv2.destroyAllWindows()

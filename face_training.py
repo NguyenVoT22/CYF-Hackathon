@@ -35,4 +35,4 @@ recognizer.train(faces, np.array(ids))
 recognizer.write('trainer/trainer.yml')
 
 # Print the numer of faces trained and end program
-print("\n We have sucessfully trained {0} face(s). Now exiting ...".format(len(np.unique(ids))))
+print("\n We have sucessfully trained {0} face(s). Now exiting the program...".format(len(np.unique(ids))))
